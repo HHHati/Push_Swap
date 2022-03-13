@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   lib_fonctions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 16:40:19 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/13 11:05:34 by bade-lee         ###   ########.fr       */
+/*   Created: 2022/03/13 11:01:37 by bade-lee          #+#    #+#             */
+/*   Updated: 2022/03/13 11:02:20 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+size_t	ft_strlen(const char *str)
 {
-	t_infos	*infos;
+	size_t	i;
 
-	if (argv[1][0] == '\0' || argc < 2)
-		exit (0);
-	if (!check_params(argv, argc))
-		error();
-	infos = 
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }
