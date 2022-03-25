@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 10:41:34 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 10:45:19 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ t_infos	**init_infos(char *argv, int argc)
 	size_t	n;
 
 	n = 0;
-	infos = 
+	infos = manage_param(argv, argc);
+	if (!infos || !atoi_check(infos) || )
 }

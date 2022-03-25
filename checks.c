@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:24:42 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 10:33:31 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 10:49:10 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,37 @@ int	atoi_check(char **infos)
 	}
 	return (1);
 }
+
+static int	check_strings(char *s1, char *s2)
+{
+	size_t	i;
+
+	i = 0;
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (0);
+	while (i < ft_strlen(s1))
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
+
+int	check_double_stack(char **infos)
+{
+	size_t	n;
+	size_t	i;
+
+	n = 0;
+	while (infos[n])
+	{
+		i = n + 1;
+		while (infos[i])
+		{
+			if (check_strings(infos[n], infos[i]) && i != n)
+				free_infos(infos, 1);
+			i++;
+		}
+		n++;
+	}
+	return (1);
