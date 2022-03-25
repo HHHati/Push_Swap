@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 11:34:54 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:35:10 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ t_infos	**init_infos(char *argv, int argc)
 	global_infos->len = 0;
 	while (infos[global_infos->len])
 		global_infos->len = global_infos->len + 1;
-		global_infos->sep = global_infos->len
+		global_infos->sep = global_infos->len;
 	box_init(global_infos, infos);
 	box_index(global_infos);
 	return (global_infos);
