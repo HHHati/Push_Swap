@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 10:45:19 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:23:14 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,25 @@ static char	**manage_param(char **argv, int argc)
 	return (infos);
 }
 
+
+
 t_infos	**init_infos(char *argv, int argc)
 {
 	char	**infos;
-	t_infos	*infos;
+	t_infos	*global_infos;
 	size_t	n;
 
 	n = 0;
 	infos = manage_param(argv, argc);
-	if (!infos || !atoi_check(infos) || )
+	if (!infos || !atoi_check(infos) || check_double_stack(infos))
+		error();
+	if (!infos[0])
+		free_infos(infos, 1);
+	global_infos = malloc(sizeof(t_infos *));
+	if (!global_infos)
+		free_infos(infos, 1);
+	global_infos->len = 0;
+	while (infos[global_infos->len])
+		global_infos->len = global_infos->len + 1;
+		global_infos->sep = global_infos->len
 }
