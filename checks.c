@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:24:42 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/13 10:54:20 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 10:33:31 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,23 @@ int	check_param(char *s)
 			i++;
 		if (s[i] && s[i] != ' ' && s[i] != '\t')
 			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	atoi_check(char **infos)
+{
+	int	i;
+
+	i = 0;
+	while (infos[i])
+	{
+		if (ft_atoi(infos[i]) == 0 && infos[i][0] != '0')
+		{
+			free_infos(infos, 1);
+			return (0);
+		}
 		i++;
 	}
 	return (1);
