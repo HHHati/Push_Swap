@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:55:22 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 11:42:09 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 17:48:49 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,18 @@ void	swap_box(t_infos *global_infos)
 		global_infos->box[global_infos->len - i - 1] = temp;
 		i++;
 	}
+}
+
+int	is_sorted(t_infos *global_infos)
+{
+	int	i;
+
+	i = global_infos->sep - 1;
+	while (i > -1)
+	{
+		if (global_infos->box[i] != i)
+			return (0);
+		i--;
+	}
+	return (1);
 }
