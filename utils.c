@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:55:22 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 10:37:13 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:32:59 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,14 @@ void	free_infos(char **infos, int status)
 		i++;
 	}
 	free(infos);
+	if (status == 1)
+		error();
+}
+
+void	free_box(t_data *global_infos, int status)
+{
+	free(global_infos->box);
+	free(global_infos);
 	if (status == 1)
 		error();
 }

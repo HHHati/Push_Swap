@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 11:23:14 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/25 11:34:54 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,46 @@ static char	**manage_param(char **argv, int argc)
 	return (infos);
 }
 
+static void	box_init(t_data *global_infos, char **infos)
+{
+	int	n;
+	int	i;
 
+	n = global_infos->len - 1;
+	i = 0;
+	global_infos->box = malloc(global_infos->len * sizeof(int));
+	if (!global_infos->box)
+	{
+		free(global_infos);
+		free_infos(data, 1);
+	}
+	while (n > -1)
+	{
+		global_infos->box[i] = ft_atoi(infos[n]);
+		n--;
+		i++;
+	}
+	free_infos(data, 0);
+}
+
+void	box_index(t_data *global_infos)
+{
+	int	i;
+	int	*new_box;
+
+	new_box = malloc(global_infos->len * sizeof(int));
+	if (!new_box)
+		free_box(global_infos, 1);
+	i = 0;
+	get_max(global_infos, new_box);
+	while (i < global_infos->len - 1)
+	{
+		get_min(global_infos, i, new_box);
+		i++;
+	}
+	free(global_infos->box);
+	global_infos->box = new_box;
+}
 
 t_infos	**init_infos(char *argv, int argc)
 {
@@ -61,4 +100,7 @@ t_infos	**init_infos(char *argv, int argc)
 	while (infos[global_infos->len])
 		global_infos->len = global_infos->len + 1;
 		global_infos->sep = global_infos->len
+	box_init(global_infos, infos);
+	box_index(global_infos);
+	return (global_infos);
 }
