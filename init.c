@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 13:18:58 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:58:36 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,10 @@ t_infos	*init_infos(char **argv, int argc)
 
 	n = 0;
 	infos = manage_param(argv, argc);
-	if (!infos || !atoi_check(infos) || check_double_stack(infos))
+	if (!infos || !atoi_check(infos) || !check_double_stack(infos))
+	{
 		error();
+	}
 	if (!infos[0])
 		free_infos(infos, 1);
 	global_infos = malloc(sizeof(t_infos *));
