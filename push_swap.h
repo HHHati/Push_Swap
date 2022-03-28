@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:25 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 18:16:21 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 09:48:15 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <limits.h>
+# include "libft/include/libft.h"
 
 //          ----------========== {    STRUCT    } ==========----------
 
@@ -28,13 +29,6 @@ typedef struct s_infos
 	int	sep;
 	int	len;
 }				t_infos;
-
-//          ----------========== {    LIB FT    } ==========----------
-
-size_t		ft_strlen(const char *str);
-int			ft_isdigit(int c);
-static char	*ft_strcpy(char *dest, const char *src);
-char		*ft_strdup(const char *s1);
 
 //          ----------========== {     FCTS     } ==========----------
 
