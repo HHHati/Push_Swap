@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:02:54 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:45:15 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	box_index(t_infos *global_infos)
 	global_infos->box = new_box;
 }
 
-t_infos	**init_infos(char *argv, int argc)
+t_infos	**init_infos(char **argv, int argc)
 {
 	char	**infos;
 	t_infos	*global_infos;

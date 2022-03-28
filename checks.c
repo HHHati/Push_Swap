@@ -6,13 +6,13 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:24:42 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:01:32 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:47:51 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_params(int argc, char **argv)
+int	check_params(char **argv, int argc)
 {
 	int		i;
 	size_t	n;
@@ -44,7 +44,7 @@ int	check_param(char *s)
 	i = 0;
 	if (ft_strlen(s) < 1 || (!ft_isdigit(s[0]) && s[0] != '-' && s[0] != '+'))
 		return (0);
-	if ((s[0] == '-' || s[0] == '+') && (ft_strlen(s < 2)))
+	if ((s[0] == '-' || s[0] == '+') && (ft_strlen(s) < 2))
 		return (0);
 	while (ft_strlen(s) > i && s[i])
 	{
