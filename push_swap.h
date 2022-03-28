@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:25 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:50:33 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:19:35 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ typedef struct s_infos
 
 int			main(int argc, char **argv);
 void		push_swap(t_infos *global_infos);
-t_infos		**init_infos(char **argv, int argc);
+t_infos		*init_infos(char **argv, int argc);
 void		box_index(t_infos *global_infos);
-static void	box_init(t_infos *global_infos, char **infos);
-static char	**manage_param(char **argv, int argc);
+void		box_init(t_infos *global_infos, char **infos);
+char		**manage_param(char **argv, int argc);
 void		get_max(t_infos *global_infos, int	*new_box);
 void		get_min(t_infos *global_infos, int index, int	*new_box);
 int			is_sorted(t_infos *global_infos);
@@ -53,11 +53,11 @@ void		rra_move(t_infos *infos);
 int			check_params(char **argv, int argc);
 int			check_param(char *s);
 int			atoi_check(char **infos);
-static int	check_strings(char *s1, char *s2);
+int			check_strings(char *s1, char *s2);
 int			check_double_stack(char **infos);
 void		brute_push_swap(t_infos *global_infos);
-static void	brute_three(t_infos *global_infos);
-static int	brute_four_easy(t_infos *global_infos);
+void		brute_three(t_infos *global_infos);
+int			brute_four_easy(t_infos *global_infos);
 void		brute_four(t_infos *global_infos);
 void		brute_five(t_infos *global_infos);
 

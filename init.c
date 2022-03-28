@@ -6,13 +6,13 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:45:15 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:18:58 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static char	**manage_param(char **argv, int argc)
+char	**manage_param(char **argv, int argc)
 {
 	char	**infos;
 	int		i;
@@ -40,7 +40,7 @@ static char	**manage_param(char **argv, int argc)
 	return (infos);
 }
 
-static void	box_init(t_infos *global_infos, char **infos)
+void	box_init(t_infos *global_infos, char **infos)
 {
 	int	n;
 	int	i;
@@ -81,7 +81,7 @@ void	box_index(t_infos *global_infos)
 	global_infos->box = new_box;
 }
 
-t_infos	**init_infos(char **argv, int argc)
+t_infos	*init_infos(char **argv, int argc)
 {
 	char	**infos;
 	t_infos	*global_infos;

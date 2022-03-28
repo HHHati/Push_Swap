@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:40:16 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/28 09:56:22 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/03/28 10:57:29 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME):
 	@make -C libft
 	@$(CC) $(FLAGS) $(SRC) $(LIB) $(INCLUDE) -o $(NAME)
 	@printf "\e[1;32m.\e[0;m"

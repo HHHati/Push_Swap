@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:24:42 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:47:51 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:18:45 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	atoi_check(char **infos)
 	return (1);
 }
 
-static int	check_strings(char *s1, char *s2)
+int	check_strings(char *s1, char *s2)
 {
 	size_t	i;
 

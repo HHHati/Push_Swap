@@ -6,13 +6,13 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:55:45 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 09:57:41 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:18:39 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	brute_three(t_infos *global_infos)
+void	brute_three(t_infos *global_infos)
 {
 	if (global_infos->box[0] == 1 && global_infos->box[1] == 0
 		&& global_infos->box[2] == 2)
@@ -37,7 +37,7 @@ static void	brute_three(t_infos *global_infos)
 	}
 }
 
-static int	brute_four_easy(t_infos *global_infos)
+int	brute_four_easy(t_infos *global_infos)
 {
 	if (global_infos->box[0] == 1 && global_infos->box[1] == 0
 		&& global_infos->box[2] == 2 && global_infos->box[3] == 3)
