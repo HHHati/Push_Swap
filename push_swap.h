@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:25 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 10:48:17 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:50:33 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_infos
 
 //          ----------========== {     FCTS     } ==========----------
 
-int			main(char **argv, int argc);
+int			main(int argc, char **argv);
 void		push_swap(t_infos *global_infos);
 t_infos		**init_infos(char **argv, int argc);
 void		box_index(t_infos *global_infos);
@@ -50,7 +50,7 @@ void		pa_move(t_infos *infos);
 void		pb_move(t_infos *infos);
 void		ra_move(t_infos *infos);
 void		rra_move(t_infos *infos);
-int			check_params(int argc, char **argv);
+int			check_params(char **argv, int argc);
 int			check_param(char *s);
 int			atoi_check(char **infos);
 static int	check_strings(char *s1, char *s2);
