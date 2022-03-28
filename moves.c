@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:46:09 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/13 11:33:59 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:04:25 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	pa_move(t_infos *infos)
 	if (infos->sep == infos->len)
 		return ;
 	temp = infos->box[infos->sep];
-	infos->sep = info->sep + 1;
+	infos->sep = infos->sep + 1;
 	while (i > 0)
 	{
-		infos->box[i] = infos->boc[i - 1];
+		infos->box[i] = infos->box[i - 1];
 		i--;
 	}
 	infos->box[0] = temp;

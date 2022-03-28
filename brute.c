@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 17:55:45 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 18:06:22 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 09:57:41 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	brute_three(t_infos *global_infos)
 	}
 }
 
-static int	brute_four_easy(t_info *global_infos)
+static int	brute_four_easy(t_infos *global_infos)
 {
 	if (global_infos->box[0] == 1 && global_infos->box[1] == 0
 		&& global_infos->box[2] == 2 && global_infos->box[3] == 3)
@@ -65,7 +65,7 @@ void	brute_four(t_infos *global_infos)
 {
 	int	i;
 
-	if (brute_four_easy(main_data))
+	if (brute_four_easy(global_infos))
 		return ;
 	if (global_infos->box[1] == 0)
 		ra_move(global_infos);
@@ -112,8 +112,8 @@ void	brute_five(t_infos *global_infos)
 		global_infos->box[i] -= 1;
 		i++;
 	}
-	small_four(global_infos);
-	move_pa(global_infos);
+	brute_four(global_infos);
+	pa_move(global_infos);
 }
 
 void	brute_push_swap(t_infos *global_infos)

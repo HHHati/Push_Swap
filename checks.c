@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:24:42 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 10:49:10 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:01:32 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,14 @@ int	check_param(char *s)
 	i = 0;
 	if (ft_strlen(s) < 1 || (!ft_isdigit(s[0]) && s[0] != '-' && s[0] != '+'))
 		return (0);
-	if ((s[0] == '-' || s[0] == '+') && (ft_strlen(s < 2))
+	if ((s[0] == '-' || s[0] == '+') && (ft_strlen(s < 2)))
 		return (0);
 	while (ft_strlen(s) > i && s[i])
 	{
-		if	((s[i] == '-' || s[i] == '+') && (!s[i + 1] || !ft_isdigit(s[n + 1])))
+		if ((s[i] == '-' || s[i] == '+')
+			&& (!s[i + 1] || !ft_isdigit(s[i + 1])))
 			return (0);
-		if(!(s[i] == '-' || s[i] == '+' || ft_isdigit(s[i])))
+		if (!(s[i] == '-' || s[i] == '+' || ft_isdigit(s[i])))
 			return (0);
 		i++;
 		while (ft_isdigit(s[i]) && s[i])
@@ -93,6 +94,7 @@ static int	check_strings(char *s1, char *s2)
 		i++;
 	}
 	return (1);
+}
 
 int	check_double_stack(char **infos)
 {
@@ -112,3 +114,4 @@ int	check_double_stack(char **infos)
 		n++;
 	}
 	return (1);
+}

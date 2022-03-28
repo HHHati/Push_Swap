@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 11:35:10 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:02:54 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	**manage_param(char **argv, int argc)
 	i = 0;
 	if (argc == 2)
 	{
-		infos = ft_split(av[1], ' ');
+		infos = ft_split(argv[1], ' ');
 		if (!infos)
 			return (0);
 	}
@@ -31,7 +31,7 @@ static char	**manage_param(char **argv, int argc)
 			return (0);
 		while (++i < argc)
 		{
-			infos[i - 1] = ft_strdup(av[i]);
+			infos[i - 1] = ft_strdup(argv[i]);
 			if (!infos[i - 1])
 				free_infos(infos, 1);
 		}
@@ -40,7 +40,7 @@ static char	**manage_param(char **argv, int argc)
 	return (infos);
 }
 
-static void	box_init(t_data *global_infos, char **infos)
+static void	box_init(t_infos *global_infos, char **infos)
 {
 	int	n;
 	int	i;
@@ -51,7 +51,7 @@ static void	box_init(t_data *global_infos, char **infos)
 	if (!global_infos->box)
 	{
 		free(global_infos);
-		free_infos(data, 1);
+		free_infos(infos, 1);
 	}
 	while (n > -1)
 	{
@@ -59,10 +59,10 @@ static void	box_init(t_data *global_infos, char **infos)
 		n--;
 		i++;
 	}
-	free_infos(data, 0);
+	free_infos(infos, 0);
 }
 
-void	box_index(t_data *global_infos)
+void	box_index(t_infos *global_infos)
 {
 	int	i;
 	int	*new_box;

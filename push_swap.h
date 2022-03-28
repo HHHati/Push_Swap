@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:25 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 09:48:15 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 09:55:19 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_infos
 int			main(int argc, char **argv);
 void		push_swap(t_infos *global_infos);
 t_infos		**init_infos(char *argv, int argc);
-void		box_index(t_data *global_infos);
-static void	box_init(t_data *global_infos, char **infos);
+void		box_index(t_infos *global_infos);
+static void	box_init(t_infos *global_infos, char **infos);
 static char	**manage_param(char **argv, int argc);
 void		get_max(t_infos *global_infos, int	*new_box);
 void		get_min(t_infos *global_infos, int index, int	*new_box);
@@ -57,7 +57,7 @@ static int	check_strings(char *s1, char *s2);
 int			check_double_stack(char **infos);
 void		brute_push_swap(t_infos *global_infos);
 static void	brute_three(t_infos *global_infos);
-static int	brute_four_easy(t_info *global_infos);
+static int	brute_four_easy(t_infos *global_infos);
 void		brute_four(t_infos *global_infos);
 void		brute_five(t_infos *global_infos);
 

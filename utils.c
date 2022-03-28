@@ -6,15 +6,15 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:55:22 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 17:48:49 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/03/28 10:09:57 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error(void);
+void	error(void)
 {
-	write(2, "Error\n, 6");
+	write (2, "Error\n", 6);
 	exit (0);
 }
 
