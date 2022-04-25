@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:40:16 by bade-lee          #+#    #+#              #
-#    Updated: 2022/04/25 13:50:51 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/04/25 14:21:28 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME = push_swap
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
 INCLUDE = -I push_swap.h
 LIB = libft/libft.a
 

@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/25 13:30:03 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:25:32 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ t_infos	*init_infos(char **argv, int argc)
 	}
 	if (!infos[0])
 		free_infos(infos, 1);
-	global_infos = malloc(sizeof(t_infos *));
+	global_infos = malloc(sizeof(t_infos));
 	if (!global_infos)
 		free_infos(infos, 1);
 	global_infos->len = 0;

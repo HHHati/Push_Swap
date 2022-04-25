@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 16:24:23 by bade-lee          #+#    #+#             */
-/*   Updated: 2021/11/16 11:18:47 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/25 14:18:24 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,10 @@ int	ft_atoi(const char *str)
 	{
 		result = (result * 10) + (str[i] - '0');
 		i++;
-		if (result > INT_MAX / 10 && str[i] - 48
-			> (INT_MAX % 10) - (sign - 1) / 2)
-			return (- (sign + 1) / 2);
+		if (result > 2147483647 && sign == 1)
+			return (0);
+		if (result > 2147483648 && sign == -1)
+			return (0);
 	}
 	return (result * sign);
 }
