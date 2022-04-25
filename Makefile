@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:40:16 by bade-lee          #+#    #+#              #
-#    Updated: 2022/04/25 13:41:41 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/04/25 13:50:51 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,23 +31,29 @@ SRC = \
 
 #          ----------========== {     OBJS     } ==========----------
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+OBJ_DIR = obj_dir/
 
 #          ----------========== {    REGLES    } ==========----------
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 	@make -C libft
 	@$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 	@printf "\e[1;32m[Push_swap]\e[0;m"
 
-%.o: %.c
+$(OBJ_DIR)%.o: %.c
 	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
+	@printf "\e[1;32m.\e[0;m"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
 	@make -C libft clean
 	@rm -f $(OBJ)
+	@rm -rf obj_dir
 	@printf "\e[0;31m[.o files deleted]\e[0;m"
 
 fclean: clean
