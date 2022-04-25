@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:40:16 by bade-lee          #+#    #+#              #
-#    Updated: 2022/03/28 13:29:11 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/04/25 10:44:33 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ clean:
 fclean: clean
 	@make -C libft fclean
 	@rm -f $(NAME)
-	@printf "\e[0;31m[so_long deleted]\e[0;m"
+	@printf "\e[0;31m[push_swap deleted]\e[0;m"
 
 re: fclean all
 
