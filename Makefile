@@ -6,7 +6,7 @@
 #    By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/12 16:40:16 by bade-lee          #+#    #+#              #
-#    Updated: 2022/04/25 10:44:33 by bade-lee         ###   ########.fr        #
+#    Updated: 2022/04/25 13:41:41 by bade-lee         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,10 +37,13 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJ)
 	@make -C libft
-	@$(CC) $(FLAGS) $(SRC) $(LIB) $(INCLUDE) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) $(LIB) -o $(NAME)
 	@printf "\e[1;32m[Push_swap]\e[0;m"
+
+%.o: %.c
+	@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@make -C libft clean

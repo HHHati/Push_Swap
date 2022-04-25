@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 11:43:49 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/25 11:49:03 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:29:17 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	get_min(t_infos *global_infos, int index, int	*new_box)
 	i = 0;
 	while (i < global_infos->len)
 	{
-		if (global_infos->box[i] > global_infos->box[current])
+		if (global_infos->box[i] < global_infos->box[current])
 			current = i;
 		i++;
 	}

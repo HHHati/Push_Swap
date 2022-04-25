@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 10:55:22 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 13:35:55 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:31:28 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,14 @@ int	is_sorted(t_infos *global_infos)
 {
 	int	i;
 
-	i = global_infos->sep - 1;
-	while (i > -1)
+	if (global_infos->sep != global_infos->len)
+		return (0);
+	i = 0;
+	while (i < global_infos->sep)
 	{
 		if (global_infos->box[i] != i)
 			return (0);
-		i--;
+		i++;
 	}
 	return (1);
 }

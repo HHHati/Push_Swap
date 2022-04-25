@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 10:11:05 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/03/28 13:58:36 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/04/25 13:30:03 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	box_index(t_infos *global_infos)
 	int	i;
 	int	*new_box;
 
+	swap_box(global_infos);
 	new_box = malloc(global_infos->len * sizeof(int));
 	if (!new_box)
 		free_box(global_infos, 1);
