@@ -6,7 +6,7 @@
 /*   By: bade-lee <bade-lee@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 16:40:19 by bade-lee          #+#    #+#             */
-/*   Updated: 2022/04/25 13:42:24 by bade-lee         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:08:30 by bade-lee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 {
 	t_infos	*global_infos;
 
-	if (argv[1][0] == '\0' || argc < 2)
+	if (argc < 2 || argv[1][0] == '\0')
 		exit (0);
 	if (!check_params(argv, argc))
 		error();
